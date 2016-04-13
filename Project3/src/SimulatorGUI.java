@@ -1,3 +1,8 @@
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class SimulatorGUI extends javax.swing.JFrame {
 
@@ -6,6 +11,17 @@ public class SimulatorGUI extends javax.swing.JFrame {
 	public SimulatorGUI(SimulatorController simulatorcontroller) {
 		initComponents();
 		this.simulatorcontroller = simulatorcontroller;
+		getContentPane().setLayout(null);
+		
+		JButton btnNewButton = new JButton("New button");
+		btnNewButton.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent arg0) {
+				
+			}
+		});
+		btnNewButton.setBounds(60, 317, 89, 23);
+		getContentPane().add(btnNewButton);
 	}
 
 	/**

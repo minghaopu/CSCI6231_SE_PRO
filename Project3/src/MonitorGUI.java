@@ -1,12 +1,56 @@
+import java.awt.BorderLayout;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+
+import javax.swing.JButton;
+import org.eclipse.wb.swing.FocusTraversalOnArray;
+import java.awt.Component;
+import javax.swing.JPanel;
+import javax.swing.JLabel;
+import javax.swing.JFrame;
 
 public class MonitorGUI extends javax.swing.JFrame {
 
 	public MonitorController monitorcontroller;
 
 	public MonitorGUI(MonitorController monitorcontroller) {
+		setBounds(100, 100, 902, 591);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		initComponents();
 		this.monitorcontroller = monitorcontroller;
-
+		getContentPane().setLayout(null);
+		
+		JPanel panel = new JPanel();
+		panel.setBounds(49, 22, 222, 271);
+		getContentPane().add(panel);
+		panel.setLayout(null);
+		
+		JLabel lblTemperature = new JLabel("Temperature");
+		lblTemperature.setBounds(0, 0, 80, 20);
+		panel.add(lblTemperature);
+		
+		JPanel panel_1 = new JPanel();
+		panel_1.setBounds(49, 386, 138, 155);
+		getContentPane().add(panel_1);
+		panel_1.setLayout(null);
+		
+		JButton btnStartMonitoring = new JButton("Start Monitoring");
+		btnStartMonitoring.setBounds(0, 0, 126, 28);
+		panel_1.add(btnStartMonitoring);
+		
+		JButton btnEndMonitoring = new JButton("End Monitoring");
+		btnEndMonitoring.setBounds(0, 39, 126, 28);
+		panel_1.add(btnEndMonitoring);
+		
+		JButton btnTestMode = new JButton("Test Mode");
+		btnTestMode.setBounds(0, 76, 126, 28);
+		panel_1.add(btnTestMode);
+		
+		JButton btnReset = new JButton("Reset");
+		btnReset.setBounds(0, 116, 126, 28);
+		panel_1.add(btnReset);
+		setFocusTraversalPolicy(new FocusTraversalOnArray(new Component[]{getContentPane()}));
+		this.setVisible(true);
 	}
 
 	/**

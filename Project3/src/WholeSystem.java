@@ -14,7 +14,5 @@ public class WholeSystem {
     
     public static void main(String[] args) {
         WholeSystem app = new WholeSystem();
-//        app.monitorgui.setVisible(true);
-//        app.simulatorgui.setVisible(false); 
     }
 }
