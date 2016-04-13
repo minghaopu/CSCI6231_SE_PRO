@@ -14,7 +14,7 @@ public class Sensor {
     	double data = 0.0;
     	switch (type) {
 	    	case "temperature":
-	    		temperature = 35.0 + Math.random() * 55.0;
+	    		temperature = 72.0 * (0.9 + Math.random() * 0.2);
 	    		data = temperature;
 	    		break;
 	    	case "humidity":
@@ -38,11 +38,11 @@ public class Sensor {
 	    		data = otemperature;
 	    		break;
 	    	case "smoke":
-	    		smoke = Math.random() > 0.5 ? 1.0:0.0;
+	    		smoke = Math.random() > 0.98 ? 1.0:0.0;
 	    		data = smoke;
 	    		break;
 	    	case "gas":
-	    		gas = Math.random() > 0.5 ? 1.0:0.0;
+	    		gas = Math.random() > 0.98 ? 1.0:0.0;
 	    		data = gas;
 	    		break;
     	}
