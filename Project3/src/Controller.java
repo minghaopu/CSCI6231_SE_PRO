@@ -7,8 +7,8 @@ public class Controller {
     public double pressure;
     public double etemperature; //external wall temperature
     public double otemperature;  //outside temperature
-    public boolean smoke;       //false is no smoke, true is smoke
-    public boolean gas;         //false is no gas, true is gas
+    public double smoke;       //0 is no smoke, 1 is smoke
+    public double gas;         //0 is no gas, 1 is gas
 
 
     public double getTemp() {
@@ -35,20 +35,20 @@ public class Controller {
         return this.otemperature;
     }
 
-    public boolean getSmoke() {
+    public double getSmoke() {
         return this.smoke;
     }
 
-    public boolean getGas() {
+    public double getGas() {
         return this.gas;
     }
 
     public String getTempStatus() {
-        if (72.0 * 1.07 <= this.temperature && this.temperature <= 72.0 * 0.93) {
+        if (72.0 * 1.07 <= this.temperature || this.temperature <= 72.0 * 0.93) {
             return "alarm";
-        } else if (72.0 * 1.05 <= this.temperature && this.temperature <= 72.0 * 0.95) {
+        } else if (72.0 * 1.05 <= this.temperature || this.temperature <= 72.0 * 0.95) {
             return "red";
-        } else if (72.0 * 1.02 <= this.temperature && this.temperature <= 72.0 * 0.98) {
+        } else if (72.0 * 1.02 <= this.temperature || this.temperature <= 72.0 * 0.98) {
             return "yellow";
         } else {
             return "green";
@@ -104,7 +104,7 @@ public class Controller {
     }
 
     public String getSmokeStatus() {
-        if (smoke==false){
+        if (smoke == 0){
             return "green";
         }
         else
@@ -112,7 +112,7 @@ public class Controller {
     }
 
     public String getGasStatus() {
-        if (gas==false){
+        if (gas == 1){
             return "green";
         }
         else

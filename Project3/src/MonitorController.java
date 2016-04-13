@@ -10,7 +10,7 @@ public class MonitorController extends Controller {
 	private Thread monitorThread;
 
 	public MonitorController(WholeSystem wholesystem) {
-		this.wholesystem=wholesystem;
+		this.wholesystem = wholesystem;
 		this.monitorgui = new MonitorGUI(this);
 	}
 
@@ -31,10 +31,21 @@ public class MonitorController extends Controller {
 	public void stopMonitor() {
 		monitorThread.interrupt();
 	}
+	
+	public void updateData (Sensor sensor) {
+		temperature = sensor.getValue("temperature");
+		humidity = sensor.getValue("humidity");
+		oxygen = sensor.getValue("oxygen");
+		pressure = sensor.getValue("pressure");
+		etemperature = sensor.getValue("etemperature");
+		otemperature = sensor.getValue("otemperature");
+		smoke = sensor.getValue("smoke");
+		gas = sensor.getValue("gas");
+	}
 
 	private void monitor() throws InterruptedException {
 		while (true) {
-			System.out.println("37");
+			updateData (this.wholesystem.sensor);
 			Thread.sleep(1000);
 		}
 	}

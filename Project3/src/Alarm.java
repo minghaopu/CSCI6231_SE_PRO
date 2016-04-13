@@ -1,7 +1,7 @@
 
 public class Alarm {
 	private Boolean isOn = false;
-	private String message = "";
+	private String message = "The Alarm is off!";
 	
 	public String turnOnAlarm () {
 		if (isOn == false) {
