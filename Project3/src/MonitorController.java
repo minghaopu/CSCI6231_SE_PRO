@@ -12,6 +12,7 @@ public class MonitorController extends Controller {
 	public MonitorController(WholeSystem wholesystem) {
 		this.wholesystem=wholesystem;
 		this.monitorgui = new MonitorGUI(this);
+		this.monitorgui.setVisible(true);
 	}
 
 	public void awakeMonitor() {

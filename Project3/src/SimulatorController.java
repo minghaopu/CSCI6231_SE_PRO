@@ -12,6 +12,7 @@ public class SimulatorController extends Controller {
 	public SimulatorController(WholeSystem wholesystem){
 		this.wholesystem = wholesystem;
 		this.simulatorgui = new SimulatorGUI(this);
+		this.simulatorgui.setVisible(false);
 		db = new Database();
 	}
 }
