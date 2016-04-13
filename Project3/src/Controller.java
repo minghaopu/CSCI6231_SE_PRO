@@ -56,11 +56,11 @@ public class Controller {
     }
 
     public String getHumStatus() {
-        if (0.45 * 1.07 <= this.humidity && this.humidity <= 0.45 * 0.93) {
+        if (0.45 * 1.07 <= this.humidity || this.humidity <= 0.45 * 0.93) {
             return "alarm";
-        } else if (0.45 * 1.05 <= this.humidity && this.humidity <= 0.45 * 0.95) {
+        } else if (0.45 * 1.05 <= this.humidity || this.humidity <= 0.45 * 0.95) {
             return "red";
-        } else if (0.45 * 1.02 <= this.humidity && this.humidity <= 0.45 * 0.98) {
+        } else if (0.45 * 1.02 <= this.humidity || this.humidity <= 0.45 * 0.98) {
             return "yellow";
         } else {
             return "green";
@@ -68,11 +68,11 @@ public class Controller {
     }
 
     public String getOxyStatus() {
-        if (0.21 * 1.07 <= this.oxygen && this.oxygen <= 0.21 * 0.93) {
+        if (0.21 * 1.07 <= this.oxygen || this.oxygen <= 0.21 * 0.93) {
             return "alarm";
-        } else if (0.21 * 1.05 <= this.oxygen && this.oxygen <= 0.21 * 0.95) {
+        } else if (0.21 * 1.05 <= this.oxygen || this.oxygen <= 0.21 * 0.95) {
             return "red";
-        } else if (0.21 * 1.02 <= this.oxygen && this.oxygen <= 0.21 * 0.98) {
+        } else if (0.21 * 1.02 <= this.oxygen || this.oxygen <= 0.21 * 0.98) {
             return "yellow";
         } else {
             return "green";
@@ -80,11 +80,11 @@ public class Controller {
     }
 
     public String getPreStatus() {
-        if (14.5 * 1.07 <= this.pressure && this.pressure <= 14.5 * 0.93) {
+        if (14.5 * 1.07 <= this.pressure || this.pressure <= 14.5 * 0.93) {
             return "alarm";
-        } else if (14.5 * 1.05 <= this.pressure && this.pressure <= 14.5 * 0.95) {
+        } else if (14.5 * 1.05 <= this.pressure || this.pressure <= 14.5 * 0.95) {
             return "red";
-        } else if (14.5 * 1.02 <= this.pressure && this.pressure <= 14.5 * 0.98) {
+        } else if (14.5 * 1.02 <= this.pressure || this.pressure <= 14.5 * 0.98) {
             return "yellow";
         } else {
             return "green";
@@ -92,11 +92,11 @@ public class Controller {
     }
 
     public String geteTempStatus() {
-        if (28.0 * 1.07 <= this.etemperature && this.etemperature <= 28.0 * 0.93) {
+        if (28.0 * 1.07 <= this.etemperature || this.etemperature <= 28.0 * 0.93) {
             return "alarm";
-        } else if (28.0 * 1.05 <= this.etemperature && this.etemperature <= 28.0 * 0.95) {
+        } else if (28.0 * 1.05 <= this.etemperature || this.etemperature <= 28.0 * 0.95) {
             return "red";
-        } else if (28.0 * 1.02 <= this.etemperature && this.etemperature <= 28.0 * 0.98) {
+        } else if (28.0 * 1.02 <= this.etemperature || this.etemperature <= 28.0 * 0.98) {
             return "yellow";
         } else {
             return "green";
