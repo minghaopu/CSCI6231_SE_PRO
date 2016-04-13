@@ -2,13 +2,13 @@
 public class SimulatorGUI extends javax.swing.JFrame {
 
     private SimulatorController simulatorcontroller;
-    private WholeGUI wholeGUI;
+    private WholeSystem wholeGUI;
 
     /**
      * Creates new form SimulatorGUI
      */
 
-    public SimulatorGUI(WholeGUI wholeGUI) {
+    public SimulatorGUI(WholeSystem wholeGUI) {
         initComponents();
         this.simulatorcontroller = new SimulatorController(this);
         this.wholeGUI = wholeGUI;

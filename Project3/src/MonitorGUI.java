@@ -2,9 +2,9 @@
 public class MonitorGUI extends javax.swing.JFrame {
 
     public MonitorController monitorcontroller;
-    private WholeGUI wholeGUI;
+    private WholeSystem wholeGUI;
 
-    public MonitorGUI(WholeGUI wholeGUI) {
+    public MonitorGUI(WholeSystem wholeGUI) {
         initComponents();
         this.monitorcontroller = new MonitorController(this);
         this.wholeGUI = wholeGUI;
