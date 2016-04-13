@@ -104,7 +104,7 @@ public class Controller {
     }
 
     public String getSmokeStatus() {
-        if (smoke==false){
+        if (smoke=false){
             return "green";
         }
         else
@@ -112,7 +112,7 @@ public class Controller {
     }
 
     public String getGasStatus() {
-        if (gas==false){
+        if (gas=false){
             return "green";
         }
         else
