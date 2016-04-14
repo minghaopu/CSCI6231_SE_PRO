@@ -1,17 +1,25 @@
-import java.awt.BorderLayout;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
+import java.awt.Color;
+import java.awt.Component;
 
 import javax.swing.JButton;
-import org.eclipse.wb.swing.FocusTraversalOnArray;
-import java.awt.Component;
-import javax.swing.JPanel;
-import javax.swing.JLabel;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+
+import org.eclipse.wb.swing.FocusTraversalOnArray;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import javax.swing.JTextField;
 
 public class MonitorGUI extends javax.swing.JFrame {
 
 	public MonitorController monitorcontroller;
+	private JTextField textField;
+	private JTextField textField_1;
+	private JTextField textField_2;
+	private JTextField textField_3;
+	private JTextField textField_4;
+	private JTextField textField_5;
 
 	public MonitorGUI(MonitorController monitorcontroller) {
 		setBounds(100, 100, 902, 591);
@@ -21,7 +29,7 @@ public class MonitorGUI extends javax.swing.JFrame {
 		getContentPane().setLayout(null);
 		
 		JPanel panel = new JPanel();
-		panel.setBounds(49, 22, 222, 271);
+		panel.setBounds(49, 22, 265, 271);
 		getContentPane().add(panel);
 		panel.setLayout(null);
 		
@@ -29,8 +37,72 @@ public class MonitorGUI extends javax.swing.JFrame {
 		lblTemperature.setBounds(0, 0, 80, 20);
 		panel.add(lblTemperature);
 		
+		textField = new JTextField();
+		textField.setEditable(false);
+		textField.setBounds(130, 0, 80, 20);
+		panel.add(textField);
+		textField.setColumns(10);
+		
+		JLabel lblHumidity = new JLabel("Humidity");
+		lblHumidity.setBounds(0, 27, 80, 20);
+		panel.add(lblHumidity);
+		
+		textField_1 = new JTextField();
+		textField_1.setEditable(false);
+		textField_1.setBounds(130, 27, 80, 20);
+		panel.add(textField_1);
+		textField_1.setColumns(10);
+		
+		JLabel lblOxygen = new JLabel("Oxygen");
+		lblOxygen.setBounds(0, 55, 80, 20);
+		panel.add(lblOxygen);
+		
+		textField_2 = new JTextField();
+		textField_2.setEditable(false);
+		textField_2.setBounds(130, 55, 80, 20);
+		panel.add(textField_2);
+		textField_2.setColumns(10);
+		
+		JLabel lblPressure = new JLabel("Pressure");
+		lblPressure.setBounds(0, 86, 80, 20);
+		panel.add(lblPressure);
+		
+		JLabel lblExternalTemperature = new JLabel("External Temperature");
+		lblExternalTemperature.setBounds(0, 117, 114, 20);
+		panel.add(lblExternalTemperature);
+		
+		textField_3 = new JTextField();
+		textField_3.setEditable(false);
+		textField_3.setBounds(130, 86, 80, 20);
+		panel.add(textField_3);
+		textField_3.setColumns(10);
+		
+		textField_4 = new JTextField();
+		textField_4.setEditable(false);
+		textField_4.setBounds(130, 117, 80, 20);
+		panel.add(textField_4);
+		textField_4.setColumns(10);
+		
+		JLabel lblOutsideTemperature = new JLabel("Outside Temperature");
+		lblOutsideTemperature.setBounds(0, 148, 114, 20);
+		panel.add(lblOutsideTemperature);
+		
+		textField_5 = new JTextField();
+		textField_5.setEditable(false);
+		textField_5.setBounds(130, 148, 80, 20);
+		panel.add(textField_5);
+		textField_5.setColumns(10);
+		
+		JLabel lblSmoke = new JLabel("Smoke");
+		lblSmoke.setBounds(0, 179, 80, 20);
+		panel.add(lblSmoke);
+		
+		JLabel lblGas = new JLabel("Gas");
+		lblGas.setBounds(0, 204, 66, 20);
+		panel.add(lblGas);
+		
 		JPanel panel_1 = new JPanel();
-		panel_1.setBounds(49, 386, 138, 155);
+		panel_1.setBounds(49, 335, 138, 155);
 		getContentPane().add(panel_1);
 		panel_1.setLayout(null);
 		
@@ -43,12 +115,34 @@ public class MonitorGUI extends javax.swing.JFrame {
 		panel_1.add(btnEndMonitoring);
 		
 		JButton btnTestMode = new JButton("Test Mode");
+		btnTestMode.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				EnterTestMode();
+			}
+		});
 		btnTestMode.setBounds(0, 76, 126, 28);
 		panel_1.add(btnTestMode);
 		
 		JButton btnReset = new JButton("Reset");
 		btnReset.setBounds(0, 116, 126, 28);
 		panel_1.add(btnReset);
+		
+		JPanel panel_2 = new JPanel();
+		panel_2.setBounds(413, 38, 155, 155);
+		getContentPane().add(panel_2);
+		
+		JPanel panel_3 = new JPanel();
+		panel_3.setBounds(644, 38, 155, 155);
+		getContentPane().add(panel_3);
+		
+		JPanel panel_4 = new JPanel();
+		panel_4.setBounds(413, 321, 155, 155);
+		getContentPane().add(panel_4);
+		
+		JPanel panel_5 = new JPanel();
+		panel_5.setBounds(644, 321, 155, 155);
+		getContentPane().add(panel_5);
 		setFocusTraversalPolicy(new FocusTraversalOnArray(new Component[]{getContentPane()}));
 		this.setVisible(true);
 	}
@@ -62,5 +156,11 @@ public class MonitorGUI extends javax.swing.JFrame {
 	// <editor-fold defaultstate="collapsed" desc="Generated Code">                          
 	private void initComponents() {
 
+	}
+	private void EnterTestMode(){
+		this.setVisible(false);
+		this.monitorcontroller.wholesystem.simulatorCtr.simulatorgui.setVisible(true);
+		double k= 45.0;
+		this.textField.setText(k+"%");
 	}
 }
